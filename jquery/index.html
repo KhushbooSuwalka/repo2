@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script>
+        $(document).ready(function () {
+            $(".hide").click(function () {
+                $(".title").hide(2000);
+                $(".demo").hide(2000);
+            })
+            $(".show").click(function () {
+                $(".title").show(2000);
+                $(".demo").show(2000);
+            })
+            $(".ShowContent").click(function () {
+                $(".title").toggle();
+
+            })
+            $(".fadeIn").click(function () {
+                $("#new-demo").fadeIn();
+                // $("#new-demo").fadeIn("slow");
+
+            })
+            $(".clickhere").click(function () {
+                $("#new-demo").slideToggle("slow");
+            });
+            $(".hey").click(function () {
+                $(".demo2").animate({
+                    left: '500px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                });
+            });
+
+        });
+    </script> -->
+    <script>
+        $(document).ready(function () {
+            $("#MyRegister").submit(function (e) {
+                var full_name = $("#full_name").val();
+                var email = $("#email").val();
+                var contact_no = $("#contact_no").val();
+                var password = $("#password").val();
+
+                $(".error").remove();
+
+                var hasError = false;
+
+                if (!full_name) {
+                    alert('Empty full name Error');
+                    hasError = true;
+                }
+                if (!email ) {
+                    alert('Empty email Error');
+                    hasError = true;
+                }
+                if (!contact_no ) {
+                    alert('Empty contact number Error');
+                    hasError = true;
+                }
+                if (!password ) {
+                    alert('Empty password Error');
+                    hasError = true;
+                }
+                if (hasError) {
+                    e.preventDefault(); // Prevent form submission if there are errors
+                }
+
+            });
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+    <!-- <div class="container mt-5">
+        <button type="button" class="form-control btn btn-info hide">Hide this</button>
+        <button type="button" class="form-control btn btn-warning show mt-5">Show this</button>
+        <button type="button" class="form-control btn btn-primary ShowContent mt-5">Show content</button>
+        <button type="button" class="form-control btn btn-danger fadeIn mt-5">Fade In</button>
+        <button type="button" class="form-control btn btn-dark clickhere mt-5">Click Here to up or down the
+            panel</button>
+        <button type="button" class="form-control btn btn-primary hey mt-5">show the animation</button> 
+        <p id="new-demo" class="bg-info text-white mt-5 ">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam consectetur molestiae magni dolores ipsum
+            quod unde maxime architecto, aut tempore suscipit expedita, ipsam inventore! Dolore eligendi omnis eius
+            doloremque ut?
+            Facere voluptates corporis assumenda perspiciatis repudiandae enim harum adipisci laudantium minima eos.
+            Minima ex laborum consectetur molestiae est aperiam! Fuga quisquam iure fugit recusandae omnis labore,
+            numquam praesentium quasi odio.
+        </p>
+        <p class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo accusantium sit porro, aspernatur
+            repudiandae quas vero unde hic at ipsam numquam pariatur totam velit repellendus quod, eius impedit
+            voluptatem mollitia.</p>
+        <div class="demo bg-success text-center text-white" style="height: 50px;">
+            <h4>Hello Khushboo!!!!!</h4>
+        </div>
+        <div class="demo2 mt-5" style="background:#98bf21;height:100px;width:100px;position:absolute;"></div> -->
+
+    <!-- </div> -->
+
+    <div class="container mt-5 border">
+        <h1 class="text-danger text-center mt-5">Register form</h1>
+        <form id="MyRegister">
+            <div class="mb-5 mt-5">
+                <label class="text-primary">Full Name</label>
+                <input type="text" placeholder="Enter full Name" class="form-control" id="full_name">
+                <label class="text-primary mt-3">Email</label>
+                <input type="email" placeholder="Enter email" class="form-control" id="email">
+                <label class="text-primary mt-3">Contact</label>
+                <input type="text" placeholder="+91 0000000000" class="form-control" id="contact_no">
+                <label class="text-primary mt-3">Password</label>
+                <input type="password" placeholder="Enter password" class="form-control">
+                <label class="text-primary mt-3">Confirm the password</label>
+                <input type="password" placeholder="Confirm password" class="form-control" id="password">
+                <button type="submit" class="form-control bg-success mt-3 text-center text-white ">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

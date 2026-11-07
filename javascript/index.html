@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops and switch case </title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // function MySwitchCase() {
+        //     let customer_id=document.getElementById('customer_id').value;
+        //     let customer_name = "";
+        //     switch (customer_id) {
+        //         case '1234':
+        //             customer_name = customer_id + 'John ';
+        //             break;
+        //         case '4321':
+        //             customer_name = customer_id + ' Khushi';
+        //             break;
+        //     }
+        //     document.getElementById('demo').innerHTML = customer_name;
+        // }
+
+        function StudentDetails() {
+            let student_rollno = document.getElementById('student_rollno').value;
+            
+            let student_name = '';
+            let student_class='';
+            switch (student_rollno) {
+                case '101':
+                    student_name = 'John ';
+                    student_class= '10';
+                    break;
+                case '102':
+                    student_name= ' Khushi';
+                    student_class='11';
+                    break;
+            }
+            if(!student_rollno){
+                document.getElementById('roll_error').innerHTML = "Please enter roll no.";
+                return false;
+            }else{
+                document.getElementById('roll_error').innerHTML = "";
+                document.getElementById('demo').innerHTML = student_name +" of "+ student_class;
+                return true;
+            }
+            
+        }
+
+        //**for loop
+
+        // let num=10;
+        // var record='';
+        // for (let i=0;i<num;i++){
+        //     //    document.write(i+'<br/>')
+        //     record+=i;
+        //     document.write(record+'<br/>')
+        // }
+        // document.getElementById('for_loop').innerHTML=record;
+
+        //**for in
+        // let stud={fname:'khushi',branch:'ds',dob:'01-01-2006',rollno:123456};
+        // let stud_record,i,data='';
+        // for(i in stud){
+        //     data+=stud[i]+'<br/>';
+        // }
+        // document.write(data);
+
+        //**foreach
+        // const emp=[1,2,3,4,5,6];
+        // emp.forEach(EmpFunction);
+        // function EmpFunction(value,index,array){
+        //     document.write(value[index]+'<br/>');
+        //     document.write(value+'<br/>');
+        //     document.write(index+'<br/>');
+        //     document.write(array+'<br/>');
+        // }
+    </script>
+</head>
+
+<body>
+    <!-- <div class="mt-5 container">
+        <form id="myform" onclick="return MySwitchCase()">
+            <input type="text" class="form-control" placeholder="Get id" id="customer_id">
+            <button type="button" class="btn btn-info mt-3">Use Switch Case</button>
+            <p id="demo"></p>
+        </form> -->
+    <!-- </div> -->
+     <div class="mt-5 container">
+        <form id="myform" >
+            <input type="text" class="form-control" placeholder="Get roll no" id="student_rollno">
+            <p class="text-danger" id="roll_error"></p>
+            <button type="button" class="btn btn-info mt-3" onclick="return StudentDetails()" >Show Details</button>
+            <p id="demo"></p>
+
+        </form>
+     </div>
+
+    
+</body>
+
+</html> 
